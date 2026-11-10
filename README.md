@@ -1,15 +1,18 @@
 # TaCo Robustness Study
 
-This repository contains a Kaggle notebook and its generated results for evaluating the robustness of TaCo, a pre-trained network traffic classification model, on the ISCXVPN dataset.
+This repository contains a Kaggle notebook, a local attack and evaluation package, and generated results for studying the robustness of TaCo, a pre-trained network traffic classification model, on the ISCXVPN dataset.
 
 The main entry point is [`CNS_Project.ipynb`](CNS_Project.ipynb). It prepares packet capture data, builds per-flow and MFR image datasets, fine-tunes TaCo classifiers, evaluates evasion and impersonation attacks, and runs analyses of representation quality and possible identifier shortcuts. The notebook compares pre-trained and from-scratch models, includes capture-disjoint and identifier-masked experiments, and bundles outputs after each stage.
+
+The project combines two codebases with distinct roles: TaCo supplies the model architecture, training and upstream code; [`Robust_evaluation/`](Robust_evaluation/) supplies this project's packet-level attack implementations, threat model, evaluation pipeline, analysis tools, and tests. The evaluation code is local to this repository and is not part of the TaCo GitHub repository.
 
 ## Data and upstream code
 
 - **Dataset:** [ISCXVPN on Kaggle](https://www.kaggle.com/datasets/cs23b2013/iscxvpn)
-- **TaCo source code:** [NSSL-SJTU/TaCo on GitHub](https://github.com/NSSL-SJTU/TaCo)
+- **TaCo model code:** [NSSL-SJTU/TaCo on GitHub](https://github.com/NSSL-SJTU/TaCo)
+- **Attack and evaluation code:** [`Robust_evaluation/`](Robust_evaluation/) in this repository
 
-The notebook expects the ISCXVPN packet captures, a TaCo checkout containing `fine-tune/`, `attack/`, `data/`, and `pre-trained_TACO.pth`, plus the `taco_robust` code used by the experiments. In Kaggle, attach these as notebook inputs. The setup cell attempts to discover the inputs automatically; set `RAW_PCAP_DIR`, `TACO_SRC`, and `ROBUST_SRC` there to override discovery.
+The notebook needs the ISCXVPN packet captures, a TaCo checkout containing `fine-tune/`, `attack/`, `data/`, and `pre-trained_TACO.pth`, and this repository's `Robust_evaluation/robust/` package. In Kaggle, attach the dataset and TaCo checkout as notebook inputs, and upload `Robust_evaluation/` as an input (or zip its contents) so the notebook can locate files such as `pcap_ops.py` and `linear_probe.py`. The setup cell searches under `/kaggle/input`; set `RAW_PCAP_DIR`, `TACO_SRC`, and `ROBUST_SRC` there to override automatic discovery. `ROBUST_SRC` should point to the `robust` package directory, while the sibling `THREAT_MODEL.md` documents the assumptions used by the evaluation.
 
 ## Running the notebook
 
@@ -28,6 +31,8 @@ The notebook installs its Python dependencies during setup, prepares flow and im
 ## Repository contents
 
 - `CNS_Project.ipynb` — end-to-end experiment notebook and configuration.
+- `Robust_evaluation/robust/` — packet-level perturbation operators, attack implementations, model evaluation, analyses, and tests.
+- `Robust_evaluation/THREAT_MODEL.md` — attacker capabilities, goals, budgets, and validity assumptions.
 - `Results/` — generated figures, logs, and machine-readable summaries from the study.
 
-The dataset and TaCo implementation are upstream resources; this repository links to them and does not include their source data or code.
+The dataset and TaCo model implementation remain upstream resources; this repository does not include the packet captures, TaCo source checkout, or pre-trained checkpoint.
