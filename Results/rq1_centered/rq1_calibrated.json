@@ -1,0 +1,44 @@
+{
+  "n_flows": 550,
+  "centered": true,
+  "auc_same_vs_diff": 0.5555031499518768,
+  "same": {
+    "p5": -0.2635018825531006,
+    "p25": -0.12462377548217773,
+    "p50": 0.0029226718470454216,
+    "p75": 0.16370925307273865,
+    "p95": 0.4819040298461914
+  },
+  "diff": {
+    "p5": -0.26779112219810486,
+    "p25": -0.14001697301864624,
+    "p50": -0.03256862238049507,
+    "p75": 0.09391367435455322,
+    "p95": 0.32911914587020874
+  },
+  "frac_diff_pairs_above_0_85": 0.000512,
+  "taus": {
+    "tau_diff95": 0.32911914587020874,
+    "tau_same05": -0.2635018825531006,
+    "arbitrary_0.85": 0.85
+  },
+  "collision_study": {
+    "n": 150,
+    "trivial": 14,
+    "attacked": 136,
+    "collided": 5,
+    "flipped_to_target": 1,
+    "flipped_any": 18,
+    "collided_and_flip_target": 0,
+    "no_collision_but_flip": 18,
+    "collision_rate": 0.03676470588235294,
+    "collision_rate_ci": [
+      0.015803853341031543,
+      0.08317670752211648
+    ],
+    "flip_rate_given_collision": 0.0,
+    "tau": 0.32911914587020874,
+    "attack": "greedy",
+    "budget": "L(2KB,4pkt)"
+  }
+}

@@ -1,0 +1,21 @@
+[mask] fields = ('ip_src', 'ip_dst', 'l4_sport', 'l4_dport', 'ip_checksum', 'l4_checksum')
+[data] test: 640 flows, 5 classes, 24 captures
+[parity] mismatch email1a_flow81.pcap: 70 bytes differ, first at (row,col)=[2, 0] png=126 mem=0
+[parity] mismatch email1a_flow82.pcap: 70 bytes differ, first at (row,col)=[2, 0] png=126 mem=0
+[parity] in-memory MFR == PNG for 638/640 flows (99.688%)
+[parity] kept 638/640 flows
+[model 0] clean acc 464/638 = 0.7273  (95% Wilson 0.6914-0.7604)
+  25/116 flows done (178s)
+  50/116 flows done (360s)
+  75/116 flows done (557s)
+  100/116 flows done (727s)
+
+=== ASR (mean over flows, 95% bootstrap CI over flows) ===
+model0 random             free(0B,0pkt)    0.466 [0.371, 0.552] n=116
+model0 random             S(128B,1pkt)     0.750 [0.672, 0.828] n=116
+model0 random             M(512B,2pkt)     0.750 [0.672, 0.828] n=116
+model0 random             L(2KB,4pkt)      0.750 [0.672, 0.828] n=116
+model0 greedy             free(0B,0pkt)    0.474 [0.379, 0.560] n=116
+model0 greedy             S(128B,1pkt)     0.819 [0.741, 0.888] n=116
+model0 greedy             M(512B,2pkt)     0.871 [0.802, 0.931] n=116
+model0 greedy             L(2KB,4pkt)      0.819 [0.741, 0.888] n=116

@@ -1,0 +1,20 @@
+[mask] fields = ('ip_src', 'ip_dst', 'l4_sport', 'l4_dport', 'ip_checksum', 'l4_checksum')
+[data] test: 550 flows, 6 classes, 68 captures
+[parity] mismatch skype_chat1a_flow53.pcap: 70 bytes differ, first at (row,col)=[2, 0] png=126 mem=0
+[parity] in-memory MFR == PNG for 549/550 flows (99.818%)
+[parity] kept 549/550 flows
+[model 0] clean acc 466/549 = 0.8488  (95% Wilson 0.8164-0.8764)
+  25/116 flows done (213s)
+  50/116 flows done (435s)
+  75/116 flows done (648s)
+  100/116 flows done (917s)
+
+=== ASR (mean over flows, 95% bootstrap CI over flows) ===
+model0 random             free(0B,0pkt)    0.216 [0.147, 0.293] n=116
+model0 random             S(128B,1pkt)     0.534 [0.448, 0.621] n=116
+model0 random             M(512B,2pkt)     0.534 [0.448, 0.629] n=116
+model0 random             L(2KB,4pkt)      0.526 [0.440, 0.621] n=116
+model0 greedy             free(0B,0pkt)    0.241 [0.164, 0.319] n=116
+model0 greedy             S(128B,1pkt)     0.621 [0.534, 0.707] n=116
+model0 greedy             M(512B,2pkt)     0.681 [0.595, 0.767] n=116
+model0 greedy             L(2KB,4pkt)      0.681 [0.595, 0.759] n=116

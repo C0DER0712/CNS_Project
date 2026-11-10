@@ -1,0 +1,524 @@
+{
+  "args": {
+    "flows_root": "/kaggle/working/flows_by_class",
+    "mfr_root": "/kaggle/working/mfr_dataset",
+    "keep_parity_mismatch": false,
+    "split": "test",
+    "ckpts": [
+      "/kaggle/working/ft/pre_seed0/checkpoint-38.pth"
+    ],
+    "common_with": [],
+    "nb_classes": 6,
+    "attacks": [
+      "random",
+      "greedy",
+      "gradient"
+    ],
+    "budgets": [
+      "free(0B,0pkt)",
+      "S(128B,1pkt)",
+      "M(512B,2pkt)",
+      "L(2KB,4pkt)"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "goal": "evasion",
+    "max_flows": 0,
+    "max_steps": 4,
+    "max_queries": 600,
+    "time_limit_s": 6000.0,
+    "pgd_max_flows": 80,
+    "all_seeds_all_attacks": false,
+    "no_pgd": false,
+    "no_validity_check": false,
+    "shard": "0/4",
+    "out": "/kaggle/working/results/evasion",
+    "device": "cuda"
+  },
+  "threat_model": {
+    "goal": "evasion",
+    "knowledge": "score",
+    "control": "client_endpoint",
+    "max_extra_bytes": 1024,
+    "max_extra_packets": 4,
+    "max_steps": 4,
+    "max_queries": 600,
+    "allowed": [
+      "pad",
+      "split",
+      "mss",
+      "keepalive",
+      "ttl",
+      "window",
+      "ipid"
+    ],
+    "notes": "Timing/IAT edits are excluded on purpose: read_MFR_bytes() keeps no timestamps, so they are unobservable to the model."
+  },
+  "classes": [
+    "chat",
+    "email",
+    "file_transfer",
+    "p2p",
+    "streaming",
+    "voip"
+  ],
+  "models": [
+    {
+      "ckpt": "/kaggle/working/ft/pre_seed0/checkpoint-38.pth",
+      "clean_acc": 0.9089253187613844,
+      "clean_acc_ci": [
+        0.8819321883556143,
+        0.930235347517229
+      ],
+      "n_test": 549,
+      "n_loaded": 550,
+      "n_attacked": 125,
+      "n_candidates": 125,
+      "matched_with": []
+    }
+  ],
+  "mask_fields": [],
+  "per_model_rows": [
+    {
+      "asr": 0.1386666666666667,
+      "lo": 0.08533333333333333,
+      "hi": 0.2,
+      "n_flows": 125,
+      "seed_std": 0.004618802153516994,
+      "attack": "random",
+      "budget": "free(0B,0pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.1733333333333333,
+      "lo": 0.11459999999999998,
+      "hi": 0.2373333333333333,
+      "n_flows": 125,
+      "seed_std": 0.024440403706431156,
+      "attack": "random",
+      "budget": "S(128B,1pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.16,
+      "lo": 0.10133333333333333,
+      "hi": 0.22133333333333333,
+      "n_flows": 125,
+      "seed_std": 0.02116601048851672,
+      "attack": "random",
+      "budget": "M(512B,2pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.14933333333333332,
+      "lo": 0.09333333333333332,
+      "hi": 0.21066666666666667,
+      "n_flows": 125,
+      "seed_std": 0.02809507667427397,
+      "attack": "random",
+      "budget": "L(2KB,4pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.128,
+      "lo": 0.072,
+      "hi": 0.192,
+      "n_flows": 125,
+      "attack": "greedy",
+      "budget": "free(0B,0pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.216,
+      "lo": 0.144,
+      "hi": 0.288,
+      "n_flows": 125,
+      "attack": "greedy",
+      "budget": "S(128B,1pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.224,
+      "lo": 0.152,
+      "hi": 0.296,
+      "n_flows": 125,
+      "attack": "greedy",
+      "budget": "M(512B,2pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.224,
+      "lo": 0.152,
+      "hi": 0.296,
+      "n_flows": 125,
+      "attack": "greedy",
+      "budget": "L(2KB,4pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.128,
+      "lo": 0.072,
+      "hi": 0.192,
+      "n_flows": 125,
+      "attack": "gradient",
+      "budget": "free(0B,0pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.192,
+      "lo": 0.128,
+      "hi": 0.25619999999999893,
+      "n_flows": 125,
+      "attack": "gradient",
+      "budget": "S(128B,1pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.192,
+      "lo": 0.128,
+      "hi": 0.264,
+      "n_flows": 125,
+      "attack": "gradient",
+      "budget": "M(512B,2pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.192,
+      "lo": 0.128,
+      "hi": 0.264,
+      "n_flows": 125,
+      "attack": "gradient",
+      "budget": "L(2KB,4pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.5375,
+      "lo": 0.425,
+      "hi": 0.65,
+      "n_flows": 80,
+      "attack": "pgd_all_eps4",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 0.9625,
+      "lo": 0.9125,
+      "hi": 1.0,
+      "n_flows": 80,
+      "attack": "pgd_all_eps8",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "n_flows": 80,
+      "attack": "pgd_all_eps16",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "n_flows": 80,
+      "attack": "pgd_all_eps32",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "n_flows": 80,
+      "attack": "pgd_all_eps64",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 0.0375,
+      "lo": 0.0,
+      "hi": 0.0875,
+      "n_flows": 80,
+      "attack": "pgd_payload_eps4",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 0.1375,
+      "lo": 0.075,
+      "hi": 0.2125,
+      "n_flows": 80,
+      "attack": "pgd_payload_eps8",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 0.4125,
+      "lo": 0.3125,
+      "hi": 0.5125,
+      "n_flows": 80,
+      "attack": "pgd_payload_eps16",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 0.825,
+      "lo": 0.7375,
+      "hi": 0.9125,
+      "n_flows": 80,
+      "attack": "pgd_payload_eps32",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 0.85,
+      "lo": 0.775,
+      "hi": 0.925,
+      "n_flows": 80,
+      "attack": "pgd_payload_eps64",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 0.3625,
+      "lo": 0.2625,
+      "hi": 0.475,
+      "n_flows": 80,
+      "attack": "pgd_header_eps4",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 0.9125,
+      "lo": 0.85,
+      "hi": 0.975,
+      "n_flows": 80,
+      "attack": "pgd_header_eps8",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "n_flows": 80,
+      "attack": "pgd_header_eps16",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "n_flows": 80,
+      "attack": "pgd_header_eps32",
+      "budget": "feature-space",
+      "model": 0
+    },
+    {
+      "asr": 1.0,
+      "lo": 1.0,
+      "hi": 1.0,
+      "n_flows": 80,
+      "attack": "pgd_header_eps64",
+      "budget": "feature-space",
+      "model": 0
+    }
+  ],
+  "pooled_across_models": [
+    {
+      "attack": "gradient",
+      "budget": "L(2KB,4pkt)",
+      "mean_asr": 0.192,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "gradient",
+      "budget": "M(512B,2pkt)",
+      "mean_asr": 0.192,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "gradient",
+      "budget": "S(128B,1pkt)",
+      "mean_asr": 0.192,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "gradient",
+      "budget": "free(0B,0pkt)",
+      "mean_asr": 0.128,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "greedy",
+      "budget": "L(2KB,4pkt)",
+      "mean_asr": 0.224,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "greedy",
+      "budget": "M(512B,2pkt)",
+      "mean_asr": 0.224,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "greedy",
+      "budget": "S(128B,1pkt)",
+      "mean_asr": 0.216,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "greedy",
+      "budget": "free(0B,0pkt)",
+      "mean_asr": 0.128,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_all_eps16",
+      "budget": "feature-space",
+      "mean_asr": 1.0,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_all_eps32",
+      "budget": "feature-space",
+      "mean_asr": 1.0,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_all_eps4",
+      "budget": "feature-space",
+      "mean_asr": 0.5375,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_all_eps64",
+      "budget": "feature-space",
+      "mean_asr": 1.0,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_all_eps8",
+      "budget": "feature-space",
+      "mean_asr": 0.9625,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_header_eps16",
+      "budget": "feature-space",
+      "mean_asr": 1.0,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_header_eps32",
+      "budget": "feature-space",
+      "mean_asr": 1.0,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_header_eps4",
+      "budget": "feature-space",
+      "mean_asr": 0.3625,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_header_eps64",
+      "budget": "feature-space",
+      "mean_asr": 1.0,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_header_eps8",
+      "budget": "feature-space",
+      "mean_asr": 0.9125,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_payload_eps16",
+      "budget": "feature-space",
+      "mean_asr": 0.4125,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_payload_eps32",
+      "budget": "feature-space",
+      "mean_asr": 0.825,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_payload_eps4",
+      "budget": "feature-space",
+      "mean_asr": 0.0375,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_payload_eps64",
+      "budget": "feature-space",
+      "mean_asr": 0.85,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "pgd_payload_eps8",
+      "budget": "feature-space",
+      "mean_asr": 0.1375,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "random",
+      "budget": "L(2KB,4pkt)",
+      "mean_asr": 0.14933333333333332,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "random",
+      "budget": "M(512B,2pkt)",
+      "mean_asr": 0.16,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "random",
+      "budget": "S(128B,1pkt)",
+      "mean_asr": 0.1733333333333333,
+      "std_across_models": null,
+      "n_models": 1
+    },
+    {
+      "attack": "random",
+      "budget": "free(0B,0pkt)",
+      "mean_asr": 0.1386666666666667,
+      "std_across_models": null,
+      "n_models": 1
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "rows": [
+    {
+      "model": 0,
+      "attack": "greedy",
+      "budget": "L(2KB,4pkt)",
+      "asr": 0.19626168224299065,
+      "lo": 0.1588785046728972,
+      "hi": 0.2336448598130841,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 137.9047619047619,
+      "mean_extra_packets_when_success": 0.6309523809523809,
+      "mean_queries": 79.52570093457943,
+      "validity_rate_of_successes": 0.9882352941176471,
+      "robust_acc_all_flows": 0.75591985428051
+    },
+    {
+      "model": 0,
+      "attack": "greedy",
+      "budget": "M(512B,2pkt)",
+      "asr": 0.17990654205607476,
+      "lo": 0.14485981308411214,
+      "hi": 0.21495327102803738,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 93.92207792207792,
+      "mean_extra_packets_when_success": 0.5454545454545454,
+      "mean_queries": 74.17056074766356,
+      "validity_rate_of_successes": 0.9871794871794872,
+      "robust_acc_all_flows": 0.7686703096539163
+    },
+    {
+      "model": 0,
+      "attack": "greedy",
+      "budget": "S(128B,1pkt)",
+      "asr": 0.15186915887850466,
+      "lo": 0.1191588785046729,
+      "hi": 0.18691588785046728,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 28.246153846153845,
+      "mean_extra_packets_when_success": 0.3230769230769231,
+      "mean_queries": 55.77336448598131,
+      "validity_rate_of_successes": 0.9848484848484849,
+      "robust_acc_all_flows": 0.7905282331511839
+    },
+    {
+      "model": 0,
+      "attack": "greedy",
+      "budget": "free(0B,0pkt)",
+      "asr": 0.09813084112149532,
+      "lo": 0.0723714953271028,
+      "hi": 0.1261682242990654,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 0.0,
+      "mean_extra_packets_when_success": 0.0,
+      "mean_queries": 36.151869158878505,
+      "validity_rate_of_successes": 1.0,
+      "robust_acc_all_flows": 0.8324225865209471
+    },
+    {
+      "model": 0,
+      "attack": "random",
+      "budget": "L(2KB,4pkt)",
+      "asr": 0.12383177570093458,
+      "lo": 0.09345794392523364,
+      "hi": 0.1542056074766355,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 160.1509433962264,
+      "mean_extra_packets_when_success": 0.6415094339622641,
+      "mean_queries": 92.92523364485982,
+      "validity_rate_of_successes": 1.0,
+      "robust_acc_all_flows": 0.8123861566484517
+    },
+    {
+      "model": 0,
+      "attack": "random",
+      "budget": "M(512B,2pkt)",
+      "asr": 0.11682242990654206,
+      "lo": 0.08644859813084112,
+      "hi": 0.14719626168224298,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 182.08,
+      "mean_extra_packets_when_success": 0.48,
+      "mean_queries": 93.17757009345794,
+      "validity_rate_of_successes": 1.0,
+      "robust_acc_all_flows": 0.8178506375227687
+    },
+    {
+      "model": 0,
+      "attack": "random",
+      "budget": "S(128B,1pkt)",
+      "asr": 0.1425233644859813,
+      "lo": 0.10981308411214953,
+      "hi": 0.17523364485981308,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 48.131147540983605,
+      "mean_extra_packets_when_success": 0.3114754098360656,
+      "mean_queries": 91.67289719626169,
+      "validity_rate_of_successes": 1.0,
+      "robust_acc_all_flows": 0.7978142076502732
+    },
+    {
+      "model": 0,
+      "attack": "random",
+      "budget": "free(0B,0pkt)",
+      "asr": 0.102803738317757,
+      "lo": 0.07476635514018691,
+      "hi": 0.13317757009345793,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 0.0,
+      "mean_extra_packets_when_success": 0.0,
+      "mean_queries": 93.60747663551402,
+      "validity_rate_of_successes": 1.0,
+      "robust_acc_all_flows": 0.8287795992714025
+    }
+  ],
+  "models": {
+    "0": {
+      "ckpt": "/kaggle/working/ft/pre_seed0/checkpoint-38.pth",
+      "clean_acc": 0.9089253187613844,
+      "clean_acc_ci": [
+        0.8819321883556143,
+        0.930235347517229
+      ],
+      "n_test": 549,
+      "n_loaded": 550,
+      "n_attacked": 107,
+      "n_candidates": 107,
+      "matched_with": [
+        "/kaggle/working/ft/scratch_seed0/checkpoint-59.pth"
+      ]
+    }
+  },
+  "by_class": {
+    "0|greedy|L(2KB,4pkt)": {
+      "0": {
+        "asr": 0.29333333333333333,
+        "n": 75
+      },
+      "1": {
+        "asr": 0.1509433962264151,
+        "n": 53
+      },
+      "2": {
+        "asr": 0.20430107526881722,
+        "n": 93
+      },
+      "3": {
+        "asr": 0.0425531914893617,
+        "n": 47
+      },
+      "4": {
+        "asr": 0.21978021978021978,
+        "n": 91
+      },
+      "5": {
+        "asr": 0.18840579710144928,
+        "n": 69
+      }
+    },
+    "0|greedy|M(512B,2pkt)": {
+      "0": {
+        "asr": 0.29333333333333333,
+        "n": 75
+      },
+      "1": {
+        "asr": 0.1509433962264151,
+        "n": 53
+      },
+      "2": {
+        "asr": 0.15053763440860216,
+        "n": 93
+      },
+      "3": {
+        "asr": 0.0425531914893617,
+        "n": 47
+      },
+      "4": {
+        "asr": 0.1978021978021978,
+        "n": 91
+      },
+      "5": {
+        "asr": 0.18840579710144928,
+        "n": 69
+      }
+    },
+    "0|greedy|S(128B,1pkt)": {
+      "0": {
+        "asr": 0.28,
+        "n": 75
+      },
+      "1": {
+        "asr": 0.1509433962264151,
+        "n": 53
+      },
+      "2": {
+        "asr": 0.0967741935483871,
+        "n": 93
+      },
+      "3": {
+        "asr": 0.02127659574468085,
+        "n": 47
+      },
+      "4": {
+        "asr": 0.17582417582417584,
+        "n": 91
+      },
+      "5": {
+        "asr": 0.14492753623188406,
+        "n": 69
+      }
+    },
+    "0|greedy|free(0B,0pkt)": {
+      "0": {
+        "asr": 0.2,
+        "n": 75
+      },
+      "1": {
+        "asr": 0.1320754716981132,
+        "n": 53
+      },
+      "2": {
+        "asr": 0.03225806451612903,
+        "n": 93
+      },
+      "3": {
+        "asr": 0.0,
+        "n": 47
+      },
+      "4": {
+        "asr": 0.13186813186813187,
+        "n": 91
+      },
+      "5": {
+        "asr": 0.07246376811594203,
+        "n": 69
+      }
+    }
+  },
+  "greedy_vs_random": [
+    {
+      "model": 0,
+      "budget": "L(2KB,4pkt)",
+      "n_flows": 428,
+      "greedy": 0.19626168224299065,
+      "random": 0.12383177570093458,
+      "diff": 0.07242990654205607,
+      "lo": 0.04672897196261682,
+      "hi": 0.10046728971962617,
+      "significant": true
+    },
+    {
+      "model": 0,
+      "budget": "M(512B,2pkt)",
+      "n_flows": 428,
+      "greedy": 0.17990654205607476,
+      "random": 0.11682242990654206,
+      "diff": 0.0630841121495327,
+      "lo": 0.0397196261682243,
+      "hi": 0.08878504672897196,
+      "significant": true
+    },
+    {
+      "model": 0,
+      "budget": "S(128B,1pkt)",
+      "n_flows": 428,
+      "greedy": 0.15186915887850466,
+      "random": 0.1425233644859813,
+      "diff": 0.009345794392523364,
+      "lo": -0.002336448598130841,
+      "hi": 0.02336448598130841,
+      "significant": false
+    },
+    {
+      "model": 0,
+      "budget": "free(0B,0pkt)",
+      "n_flows": 428,
+      "greedy": 0.09813084112149532,
+      "random": 0.102803738317757,
+      "diff": -0.004672897196261682,
+      "lo": -0.014018691588785047,
+      "hi": 0.004672897196261682,
+      "significant": false
+    }
+  ]
+}

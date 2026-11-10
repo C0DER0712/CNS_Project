@@ -1,0 +1,164 @@
+{
+  "args": {
+    "flows_root": "/kaggle/working/flows_by_class",
+    "init_ckpt": "/kaggle/working/ft/pre_seed0/checkpoint-38.pth",
+    "nb_classes": 6,
+    "rounds": 2,
+    "epochs_per_round": 5,
+    "aug_per_flow": 4,
+    "attack_flows": 150,
+    "lr": 0.0001,
+    "train_budget": "L(2KB,4pkt)",
+    "holdout": "keepalive",
+    "eval_budgets": [
+      "M(512B,2pkt)",
+      "L(2KB,4pkt)"
+    ],
+    "seeds": [
+      0
+    ],
+    "max_test_flows": 120,
+    "out": "/kaggle/working/results/defence",
+    "device": "cuda",
+    "seed": 0
+  },
+  "undefended": {
+    "label": "undefended",
+    "clean_acc": 0.9416666666666667,
+    "clean_acc_ci": [
+      0.8844727405319686,
+      0.9714593533686271
+    ],
+    "n_test": 120,
+    "attacks": [
+      {
+        "asr": 0.11504424778761062,
+        "lo": 0.061946902654867256,
+        "hi": 0.17699115044247787,
+        "n_flows": 113,
+        "attack": "random",
+        "budget": "M(512B,2pkt)",
+        "kind": "static"
+      },
+      {
+        "asr": 0.12389380530973451,
+        "lo": 0.07079646017699115,
+        "hi": 0.19469026548672566,
+        "n_flows": 113,
+        "attack": "random",
+        "budget": "L(2KB,4pkt)",
+        "kind": "static"
+      },
+      {
+        "asr": 0.19469026548672566,
+        "lo": 0.12389380530973451,
+        "hi": 0.2743362831858407,
+        "n_flows": 113,
+        "attack": "greedy",
+        "budget": "M(512B,2pkt)",
+        "kind": "static"
+      },
+      {
+        "asr": 0.18584070796460178,
+        "lo": 0.11504424778761062,
+        "hi": 0.25663716814159293,
+        "n_flows": 113,
+        "attack": "greedy",
+        "budget": "L(2KB,4pkt)",
+        "kind": "static"
+      },
+      {
+        "asr": 0.23893805309734514,
+        "lo": 0.168141592920354,
+        "hi": 0.3185840707964602,
+        "n_flows": 113,
+        "attack": "greedy_restarts",
+        "budget": "M(512B,2pkt)",
+        "kind": "adaptive"
+      },
+      {
+        "asr": 0.23893805309734514,
+        "lo": 0.1592920353982301,
+        "hi": 0.3185840707964602,
+        "n_flows": 113,
+        "attack": "greedy_restarts",
+        "budget": "L(2KB,4pkt)",
+        "kind": "adaptive"
+      }
+    ]
+  },
+  "defended": {
+    "label": "defended",
+    "clean_acc": 0.9583333333333334,
+    "clean_acc_ci": [
+      0.9061578707045692,
+      0.9820735474941622
+    ],
+    "n_test": 120,
+    "attacks": [
+      {
+        "asr": 0.0782608695652174,
+        "lo": 0.034782608695652174,
+        "hi": 0.13043478260869565,
+        "n_flows": 115,
+        "attack": "random",
+        "budget": "M(512B,2pkt)",
+        "kind": "static"
+      },
+      {
+        "asr": 0.0782608695652174,
+        "lo": 0.034782608695652174,
+        "hi": 0.13043478260869565,
+        "n_flows": 115,
+        "attack": "random",
+        "budget": "L(2KB,4pkt)",
+        "kind": "static"
+      },
+      {
+        "asr": 0.11304347826086956,
+        "lo": 0.05217391304347826,
+        "hi": 0.17391304347826086,
+        "n_flows": 115,
+        "attack": "greedy",
+        "budget": "M(512B,2pkt)",
+        "kind": "static"
+      },
+      {
+        "asr": 0.10434782608695652,
+        "lo": 0.05217391304347826,
+        "hi": 0.16521739130434782,
+        "n_flows": 115,
+        "attack": "greedy",
+        "budget": "L(2KB,4pkt)",
+        "kind": "static"
+      },
+      {
+        "asr": 0.13043478260869565,
+        "lo": 0.06956521739130435,
+        "hi": 0.19130434782608696,
+        "n_flows": 115,
+        "attack": "greedy_restarts",
+        "budget": "M(512B,2pkt)",
+        "kind": "adaptive"
+      },
+      {
+        "asr": 0.13043478260869565,
+        "lo": 0.06956521739130435,
+        "hi": 0.19130434782608696,
+        "n_flows": 115,
+        "attack": "greedy_restarts",
+        "budget": "L(2KB,4pkt)",
+        "kind": "adaptive"
+      }
+    ]
+  },
+  "transfer_undefended_to_defended": {
+    "n_adv": 22,
+    "fooled": 1,
+    "rate": 0.045454545454545456,
+    "ci": [
+      0.008069219301147859,
+      0.21798489499518053
+    ]
+  }
+}

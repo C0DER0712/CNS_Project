@@ -1,0 +1,285 @@
+{
+  "rows": [
+    {
+      "model": 0,
+      "attack": "greedy",
+      "budget": "L(2KB,4pkt)",
+      "asr": 0.572429906542056,
+      "lo": 0.5257009345794392,
+      "hi": 0.6214953271028038,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 168.89795918367346,
+      "mean_extra_packets_when_success": 1.1142857142857143,
+      "mean_queries": 60.16355140186916,
+      "validity_rate_of_successes": 0.9607843137254902,
+      "robust_acc_all_flows": 0.37158469945355194
+    },
+    {
+      "model": 0,
+      "attack": "greedy",
+      "budget": "M(512B,2pkt)",
+      "asr": 0.5607476635514018,
+      "lo": 0.514018691588785,
+      "hi": 0.6098130841121495,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 126.15,
+      "mean_extra_packets_when_success": 0.9333333333333333,
+      "mean_queries": 56.41822429906542,
+      "validity_rate_of_successes": 0.9917355371900827,
+      "robust_acc_all_flows": 0.38069216757741353
+    },
+    {
+      "model": 0,
+      "attack": "greedy",
+      "budget": "S(128B,1pkt)",
+      "asr": 0.45093457943925236,
+      "lo": 0.40420560747663553,
+      "hi": 0.4953855140186913,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 46.259067357512954,
+      "mean_extra_packets_when_success": 0.6373056994818653,
+      "mean_queries": 45.9696261682243,
+      "validity_rate_of_successes": 0.9897435897435898,
+      "robust_acc_all_flows": 0.4663023679417122
+    },
+    {
+      "model": 0,
+      "attack": "greedy",
+      "budget": "free(0B,0pkt)",
+      "asr": 0.14018691588785046,
+      "lo": 0.10747663551401869,
+      "hi": 0.17289719626168223,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 0.0,
+      "mean_extra_packets_when_success": 0.0,
+      "mean_queries": 34.70794392523364,
+      "validity_rate_of_successes": 0.9836065573770492,
+      "robust_acc_all_flows": 0.7085610200364298
+    },
+    {
+      "model": 0,
+      "attack": "random",
+      "budget": "L(2KB,4pkt)",
+      "asr": 0.42289719626168226,
+      "lo": 0.37850467289719625,
+      "hi": 0.4696261682242991,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 255.646408839779,
+      "mean_extra_packets_when_success": 1.276243093922652,
+      "mean_queries": 74.37383177570094,
+      "validity_rate_of_successes": 0.9526315789473684,
+      "robust_acc_all_flows": 0.48816029143898
+    },
+    {
+      "model": 0,
+      "attack": "random",
+      "budget": "M(512B,2pkt)",
+      "asr": 0.4182242990654206,
+      "lo": 0.37149532710280375,
+      "hi": 0.4649532710280374,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 197.56424581005587,
+      "mean_extra_packets_when_success": 1.0558659217877095,
+      "mean_queries": 76.11214953271028,
+      "validity_rate_of_successes": 0.988950276243094,
+      "robust_acc_all_flows": 0.4918032786885246
+    },
+    {
+      "model": 0,
+      "attack": "random",
+      "budget": "S(128B,1pkt)",
+      "asr": 0.40420560747663553,
+      "lo": 0.3621495327102804,
+      "hi": 0.4485981308411215,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 53.15606936416185,
+      "mean_extra_packets_when_success": 0.6473988439306358,
+      "mean_queries": 76.83177570093459,
+      "validity_rate_of_successes": 0.9885714285714285,
+      "robust_acc_all_flows": 0.5027322404371585
+    },
+    {
+      "model": 0,
+      "attack": "random",
+      "budget": "free(0B,0pkt)",
+      "asr": 0.14719626168224298,
+      "lo": 0.11214953271028037,
+      "hi": 0.17990654205607476,
+      "n_flows": 428,
+      "mean_extra_bytes_when_success": 0.0,
+      "mean_extra_packets_when_success": 0.0,
+      "mean_queries": 90.95327102803738,
+      "validity_rate_of_successes": 0.984375,
+      "robust_acc_all_flows": 0.7030965391621129
+    }
+  ],
+  "models": {
+    "0": {
+      "ckpt": "/kaggle/working/ft/scratch_seed0/checkpoint-59.pth",
+      "clean_acc": 0.8178506375227687,
+      "clean_acc_ci": [
+        0.783392117040524,
+        0.8478917805532893
+      ],
+      "n_test": 549,
+      "n_loaded": 550,
+      "n_attacked": 107,
+      "n_candidates": 107,
+      "matched_with": [
+        "/kaggle/working/ft/pre_seed0/checkpoint-38.pth"
+      ]
+    }
+  },
+  "by_class": {
+    "0|greedy|L(2KB,4pkt)": {
+      "0": {
+        "asr": 0.68,
+        "n": 75
+      },
+      "1": {
+        "asr": 0.7735849056603774,
+        "n": 53
+      },
+      "2": {
+        "asr": 0.5376344086021505,
+        "n": 93
+      },
+      "3": {
+        "asr": 0.5319148936170213,
+        "n": 47
+      },
+      "4": {
+        "asr": 0.6043956043956044,
+        "n": 91
+      },
+      "5": {
+        "asr": 0.3333333333333333,
+        "n": 69
+      }
+    },
+    "0|greedy|M(512B,2pkt)": {
+      "0": {
+        "asr": 0.6666666666666666,
+        "n": 75
+      },
+      "1": {
+        "asr": 0.7735849056603774,
+        "n": 53
+      },
+      "2": {
+        "asr": 0.4946236559139785,
+        "n": 93
+      },
+      "3": {
+        "asr": 0.5531914893617021,
+        "n": 47
+      },
+      "4": {
+        "asr": 0.6043956043956044,
+        "n": 91
+      },
+      "5": {
+        "asr": 0.3188405797101449,
+        "n": 69
+      }
+    },
+    "0|greedy|S(128B,1pkt)": {
+      "0": {
+        "asr": 0.5333333333333333,
+        "n": 75
+      },
+      "1": {
+        "asr": 0.7169811320754716,
+        "n": 53
+      },
+      "2": {
+        "asr": 0.3225806451612903,
+        "n": 93
+      },
+      "3": {
+        "asr": 0.5319148936170213,
+        "n": 47
+      },
+      "4": {
+        "asr": 0.43956043956043955,
+        "n": 91
+      },
+      "5": {
+        "asr": 0.2898550724637681,
+        "n": 69
+      }
+    },
+    "0|greedy|free(0B,0pkt)": {
+      "0": {
+        "asr": 0.18666666666666668,
+        "n": 75
+      },
+      "1": {
+        "asr": 0.11320754716981132,
+        "n": 53
+      },
+      "2": {
+        "asr": 0.07526881720430108,
+        "n": 93
+      },
+      "3": {
+        "asr": 0.0425531914893617,
+        "n": 47
+      },
+      "4": {
+        "asr": 0.23076923076923078,
+        "n": 91
+      },
+      "5": {
+        "asr": 0.14492753623188406,
+        "n": 69
+      }
+    }
+  },
+  "greedy_vs_random": [
+    {
+      "model": 0,
+      "budget": "L(2KB,4pkt)",
+      "n_flows": 428,
+      "greedy": 0.572429906542056,
+      "random": 0.42289719626168226,
+      "diff": 0.14953271028037382,
+      "lo": 0.10981308411214953,
+      "hi": 0.18925233644859812,
+      "significant": true
+    },
+    {
+      "model": 0,
+      "budget": "M(512B,2pkt)",
+      "n_flows": 428,
+      "greedy": 0.5607476635514018,
+      "random": 0.4182242990654206,
+      "diff": 0.1425233644859813,
+      "lo": 0.102803738317757,
+      "hi": 0.1822429906542056,
+      "significant": true
+    },
+    {
+      "model": 0,
+      "budget": "S(128B,1pkt)",
+      "n_flows": 428,
+      "greedy": 0.45093457943925236,
+      "random": 0.40420560747663553,
+      "diff": 0.04672897196261682,
+      "lo": 0.014018691588785047,
+      "hi": 0.0794392523364486,
+      "significant": true
+    },
+    {
+      "model": 0,
+      "budget": "free(0B,0pkt)",
+      "n_flows": 428,
+      "greedy": 0.14018691588785046,
+      "random": 0.14719626168224298,
+      "diff": -0.007009345794392523,
+      "lo": -0.02336448598130841,
+      "hi": 0.009345794392523364,
+      "significant": false
+    }
+  ]
+}

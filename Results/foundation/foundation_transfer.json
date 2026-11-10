@@ -1,0 +1,39 @@
+{
+  "tau_low": 0.909532368183136,
+  "attack": "gradient",
+  "budget": "L(2KB,4pkt)",
+  "n": 150,
+  "encoder_level_success": 0.0,
+  "models": [
+    {
+      "ckpt": "/kaggle/working/ft/pre_seed0/checkpoint-38.pth",
+      "n_clean_correct": 138,
+      "transfer_flip_rate": 0.050724637681159424,
+      "transfer_ci": [
+        0.024785107968775345,
+        0.10100027516283061
+      ],
+      "control_flip_rate": 0.06521739130434782,
+      "control_ci": [
+        0.034686920773421094,
+        0.11929893387006854
+      ],
+      "flip_rate_when_encoder_attack_succeeded": 0.0
+    },
+    {
+      "ckpt": "/kaggle/working/ft/scratch_seed0/checkpoint-59.pth",
+      "n_clean_correct": 127,
+      "transfer_flip_rate": 0.10236220472440945,
+      "transfer_ci": [
+        0.060800981516816066,
+        0.16727327009734946
+      ],
+      "control_flip_rate": 0.11023622047244094,
+      "control_ci": [
+        0.06680938916575475,
+        0.17655052083228873
+      ],
+      "flip_rate_when_encoder_attack_succeeded": 0.0
+    }
+  ]
+}

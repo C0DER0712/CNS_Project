@@ -1,0 +1,198 @@
+{
+  "args": {
+    "flows_root": "/kaggle/working/flows_by_class",
+    "mfr_root": "/kaggle/working/mfr_dataset",
+    "keep_parity_mismatch": false,
+    "split": "test",
+    "ckpts": [
+      "/kaggle/working/ft/pre_seed1/checkpoint-37.pth",
+      "/kaggle/working/ft/pre_seed2/checkpoint-41.pth"
+    ],
+    "common_with": [],
+    "nb_classes": 6,
+    "attacks": [
+      "greedy"
+    ],
+    "budgets": [
+      "free(0B,0pkt)",
+      "S(128B,1pkt)",
+      "M(512B,2pkt)",
+      "L(2KB,4pkt)"
+    ],
+    "seeds": [
+      0
+    ],
+    "goal": "evasion",
+    "max_flows": 0,
+    "max_steps": 4,
+    "max_queries": 600,
+    "time_limit_s": 1500.0,
+    "pgd_max_flows": 80,
+    "all_seeds_all_attacks": false,
+    "no_pgd": true,
+    "no_validity_check": false,
+    "shard": "1/4",
+    "out": "/kaggle/working/results/evasion_seeds12",
+    "device": "cuda"
+  },
+  "threat_model": {
+    "goal": "evasion",
+    "knowledge": "score",
+    "control": "client_endpoint",
+    "max_extra_bytes": 1024,
+    "max_extra_packets": 4,
+    "max_steps": 4,
+    "max_queries": 600,
+    "allowed": [
+      "pad",
+      "split",
+      "mss",
+      "keepalive",
+      "ttl",
+      "window",
+      "ipid"
+    ],
+    "notes": "Timing/IAT edits are excluded on purpose: read_MFR_bytes() keeps no timestamps, so they are unobservable to the model."
+  },
+  "classes": [
+    "chat",
+    "email",
+    "file_transfer",
+    "p2p",
+    "streaming",
+    "voip"
+  ],
+  "models": [
+    {
+      "ckpt": "/kaggle/working/ft/pre_seed1/checkpoint-37.pth",
+      "clean_acc": 0.9180327868852459,
+      "clean_acc_ci": [
+        0.8920774093123379,
+        0.9381784903884082
+      ],
+      "n_test": 549,
+      "n_loaded": 550,
+      "n_attacked": 126,
+      "n_candidates": 126,
+      "matched_with": []
+    },
+    {
+      "ckpt": "/kaggle/working/ft/pre_seed2/checkpoint-41.pth",
+      "clean_acc": 0.9234972677595629,
+      "clean_acc_ci": [
+        0.8982028345457239,
+        0.9429060834517641
+      ],
+      "n_test": 549,
+      "n_loaded": 550,
+      "n_attacked": 127,
+      "n_candidates": 127,
+      "matched_with": []
+    }
+  ],
+  "mask_fields": [],
+  "per_model_rows": [
+    {
+      "asr": 0.1349206349206349,
+      "lo": 0.07936507936507936,
+      "hi": 0.1984126984126984,
+      "n_flows": 126,
+      "attack": "greedy",
+      "budget": "free(0B,0pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.21428571428571427,
+      "lo": 0.14285714285714285,
+      "hi": 0.29365079365079366,
+      "n_flows": 126,
+      "attack": "greedy",
+      "budget": "S(128B,1pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.23015873015873015,
+      "lo": 0.15873015873015872,
+      "hi": 0.30952380952380953,
+      "n_flows": 126,
+      "attack": "greedy",
+      "budget": "M(512B,2pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.24603174603174602,
+      "lo": 0.1746031746031746,
+      "hi": 0.3253968253968254,
+      "n_flows": 126,
+      "attack": "greedy",
+      "budget": "L(2KB,4pkt)",
+      "model": 0
+    },
+    {
+      "asr": 0.13385826771653545,
+      "lo": 0.07874015748031496,
+      "hi": 0.1968503937007874,
+      "n_flows": 127,
+      "attack": "greedy",
+      "budget": "free(0B,0pkt)",
+      "model": 1
+    },
+    {
+      "asr": 0.23622047244094488,
+      "lo": 0.16535433070866143,
+      "hi": 0.30708661417322836,
+      "n_flows": 127,
+      "attack": "greedy",
+      "budget": "S(128B,1pkt)",
+      "model": 1
+    },
+    {
+      "asr": 0.2440944881889764,
+      "lo": 0.16535433070866143,
+      "hi": 0.31515748031495955,
+      "n_flows": 127,
+      "attack": "greedy",
+      "budget": "M(512B,2pkt)",
+      "model": 1
+    },
+    {
+      "asr": 0.2440944881889764,
+      "lo": 0.16535433070866143,
+      "hi": 0.31515748031495955,
+      "n_flows": 127,
+      "attack": "greedy",
+      "budget": "L(2KB,4pkt)",
+      "model": 1
+    }
+  ],
+  "pooled_across_models": [
+    {
+      "attack": "greedy",
+      "budget": "L(2KB,4pkt)",
+      "mean_asr": 0.24506311711036122,
+      "std_across_models": 0.0013698481575292276,
+      "n_models": 2
+    },
+    {
+      "attack": "greedy",
+      "budget": "M(512B,2pkt)",
+      "mean_asr": 0.23712660917385325,
+      "std_across_models": 0.009854069004162002,
+      "n_models": 2
+    },
+    {
+      "attack": "greedy",
+      "budget": "S(128B,1pkt)",
+      "mean_asr": 0.22525309336332958,
+      "std_across_models": 0.015510216235250486,
+      "n_models": 2
+    },
+    {
+      "attack": "greedy",
+      "budget": "free(0B,0pkt)",
+      "mean_asr": 0.13438945131858518,
+      "std_across_models": 0.0007512070541289268,
+      "n_models": 2
+    }
+  ]
+}

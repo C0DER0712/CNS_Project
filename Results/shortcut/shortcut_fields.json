@@ -1,0 +1,190 @@
+{
+  "base_acc": 0.9090909090909091,
+  "base_acc_ci": [
+    0.8821432176191181,
+    0.930363462991367
+  ],
+  "n": 550,
+  "fields": [
+    {
+      "field": "tcp_options_and_early_payload",
+      "acc_zero": 0.769090909090909,
+      "acc_shuffle": 0.6763636363636364,
+      "drop_zero": 0.14,
+      "drop_shuffle": 0.23272727272727267,
+      "attribution": 0.009446477187335734,
+      "n_bytes": 200,
+      "attribution_share": 0.11175595443616067
+    },
+    {
+      "field": "ip_src",
+      "acc_zero": 0.7163636363636363,
+      "acc_shuffle": 0.7909090909090909,
+      "drop_zero": 0.19272727272727275,
+      "drop_shuffle": 0.11818181818181817,
+      "attribution": 0.010872326266253366,
+      "n_bytes": 20,
+      "attribution_share": 0.12862437231684817
+    },
+    {
+      "field": "ip_dst",
+      "acc_zero": 0.7163636363636363,
+      "acc_shuffle": 0.8472727272727273,
+      "drop_zero": 0.19272727272727275,
+      "drop_shuffle": 0.06181818181818177,
+      "attribution": 0.014162372223297345,
+      "n_bytes": 20,
+      "attribution_share": 0.16754705415650886
+    },
+    {
+      "field": "tcp_dport",
+      "acc_zero": 0.8981818181818182,
+      "acc_shuffle": 0.8709090909090909,
+      "drop_zero": 0.010909090909090868,
+      "drop_shuffle": 0.038181818181818206,
+      "attribution": 0.008239620103638365,
+      "n_bytes": 10,
+      "attribution_share": 0.09747830758623689
+    },
+    {
+      "field": "tcp_sport",
+      "acc_zero": 0.8981818181818182,
+      "acc_shuffle": 0.8818181818181818,
+      "drop_zero": 0.010909090909090868,
+      "drop_shuffle": 0.027272727272727226,
+      "attribution": 0.007465498544413343,
+      "n_bytes": 10,
+      "attribution_share": 0.08832011115119091
+    },
+    {
+      "field": "ip_checksum",
+      "acc_zero": 0.8981818181818182,
+      "acc_shuffle": 0.8927272727272727,
+      "drop_zero": 0.010909090909090868,
+      "drop_shuffle": 0.016363636363636358,
+      "attribution": 0.006347653096077424,
+      "n_bytes": 10,
+      "attribution_share": 0.07509551085697982
+    },
+    {
+      "field": "tcp_seq",
+      "acc_zero": 0.9090909090909091,
+      "acc_shuffle": 0.8963636363636364,
+      "drop_zero": 0.0,
+      "drop_shuffle": 0.012727272727272698,
+      "attribution": 0.006278594756586244,
+      "n_bytes": 20,
+      "attribution_share": 0.07427852051353626
+    },
+    {
+      "field": "ip_flags_frag",
+      "acc_zero": 0.8963636363636364,
+      "acc_shuffle": 0.9,
+      "drop_zero": 0.012727272727272698,
+      "drop_shuffle": 0.009090909090909038,
+      "attribution": 0.0002000698954750326,
+      "n_bytes": 10,
+      "attribution_share": 0.0023669143194174442
+    },
+    {
+      "field": "ip_ttl",
+      "acc_zero": 0.8909090909090909,
+      "acc_shuffle": 0.9,
+      "drop_zero": 0.018181818181818188,
+      "drop_shuffle": 0.009090909090909038,
+      "attribution": 0.0026777768504689446,
+      "n_bytes": 5,
+      "attribution_share": 0.031679270669536776
+    },
+    {
+      "field": "tcp_off_flags",
+      "acc_zero": 0.9090909090909091,
+      "acc_shuffle": 0.9,
+      "drop_zero": 0.0,
+      "drop_shuffle": 0.009090909090909038,
+      "attribution": 0.0005838334437620771,
+      "n_bytes": 10,
+      "attribution_share": 0.006907004849051412
+    },
+    {
+      "field": "ip_id",
+      "acc_zero": 0.9036363636363637,
+      "acc_shuffle": 0.9036363636363637,
+      "drop_zero": 0.005454545454545379,
+      "drop_shuffle": 0.005454545454545379,
+      "attribution": 0.007095932791588976,
+      "n_bytes": 10,
+      "attribution_share": 0.08394798674811978
+    },
+    {
+      "field": "tcp_window",
+      "acc_zero": 0.9072727272727272,
+      "acc_shuffle": 0.9036363636363637,
+      "drop_zero": 0.0018181818181818299,
+      "drop_shuffle": 0.005454545454545379,
+      "attribution": 0.0037964745141024735,
+      "n_bytes": 10,
+      "attribution_share": 0.04491395304324489
+    },
+    {
+      "field": "ip_proto",
+      "acc_zero": 0.9072727272727272,
+      "acc_shuffle": 0.9072727272727272,
+      "drop_zero": 0.0018181818181818299,
+      "drop_shuffle": 0.0018181818181818299,
+      "attribution": 0.000345259058785814,
+      "n_bytes": 5,
+      "attribution_share": 0.0040845655874834665
+    },
+    {
+      "field": "ip_ver_ihl_tos",
+      "acc_zero": 0.9090909090909091,
+      "acc_shuffle": 0.9090909090909091,
+      "drop_zero": 0.0,
+      "drop_shuffle": 0.0,
+      "attribution": 0.00018246191751710616,
+      "n_bytes": 10,
+      "attribution_share": 0.002158604243253068
+    },
+    {
+      "field": "tcp_ack",
+      "acc_zero": 0.9109090909090909,
+      "acc_shuffle": 0.9090909090909091,
+      "drop_zero": -0.0018181818181818299,
+      "drop_shuffle": 0.0,
+      "attribution": 0.005615153080733845,
+      "n_bytes": 20,
+      "attribution_share": 0.06642971547995082
+    },
+    {
+      "field": "tcp_urg",
+      "acc_zero": 0.9090909090909091,
+      "acc_shuffle": 0.9090909090909091,
+      "drop_zero": 0.0,
+      "drop_shuffle": 0.0,
+      "attribution": 6.324929888096035e-05,
+      "n_bytes": 10,
+      "attribution_share": 0.0007482668537363286
+    },
+    {
+      "field": "ip_total_len",
+      "acc_zero": 0.9127272727272727,
+      "acc_shuffle": 0.9127272727272727,
+      "drop_zero": -0.0036363636363636598,
+      "drop_shuffle": -0.0036363636363636598,
+      "attribution": 0.0009563981779931716,
+      "n_bytes": 10,
+      "attribution_share": 0.011314608513099803
+    },
+    {
+      "field": "tcp_checksum",
+      "acc_zero": 0.9109090909090909,
+      "acc_shuffle": 0.9127272727272727,
+      "drop_zero": -0.0018181818181818299,
+      "drop_shuffle": -0.0036363636363636598,
+      "attribution": 0.00019857919353274733,
+      "n_bytes": 10,
+      "attribution_share": 0.002349278663814182
+    }
+  ]
+}
