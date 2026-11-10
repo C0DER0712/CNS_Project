@@ -12,7 +12,7 @@ The project combines two codebases with distinct roles: TaCo supplies the model 
 - **TaCo model code:** [NSSL-SJTU/TaCo on GitHub](https://github.com/NSSL-SJTU/TaCo)
 - **Attack and evaluation code:** [`Robust_evaluation/`](Robust_evaluation/) in this repository
 
-The notebook needs the ISCXVPN packet captures (`RAW_PCAP_DIR` variable in notebook), a TaCo checkout (`TACO_SRC` variable in notebook) containing `fine-tune/`, `data/`, and `pre-trained_TACO.pth`, and this repository's `Robust_evaluation/robust/` package (`ROBUST_SRC` variable in notebook). In Kaggle, attach the dataset and TaCo checkout as notebook inputs, and upload `Robust_evaluation/` as an input (or zip its contents) so the notebook can locate files such as `pcap_ops.py` and `linear_probe.py`. The setup cell searches under `/kaggle/input`; set `RAW_PCAP_DIR`, `TACO_SRC`, and `ROBUST_SRC` there to override automatic discovery. `ROBUST_SRC` should point to the `robust` package directory, while the sibling `THREAT_MODEL.md` documents the assumptions used by the evaluation.
+The notebook needs the ISCXVPN packet captures (`RAW_PCAP_DIR` path variable in notebook), a TaCo checkout (`TACO_SRC` path variable in notebook) containing `fine-tune/`, `data/`, and `pre-trained_TACO.pth`, and this repository's `Robust_evaluation/robust/` package (`ROBUST_SRC` path variable in notebook). In Kaggle, attach the dataset and TaCo checkout as notebook inputs, and upload `Robust_evaluation/` as an input (or zip its contents) so the notebook can locate files such as `pcap_ops.py` and `linear_probe.py`. The setup cell searches under `/kaggle/input`; set `RAW_PCAP_DIR`, `TACO_SRC`, and `ROBUST_SRC` there to override automatic discovery.
 
 ## Running the notebook
 
